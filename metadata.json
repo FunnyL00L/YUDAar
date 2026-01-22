@@ -1,0 +1,7 @@
+{
+  "name": "YudamandalaAR",
+  "description": "Web AR experience for Monumen Yudha Mandala",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
