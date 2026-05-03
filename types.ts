@@ -15,7 +15,8 @@ export enum ViewMode {
   SCAN = 'SCAN',
   INFO = 'INFO',
   QUIZ = 'QUIZ',
-  ABOUT = 'ABOUT'
+  ABOUT = 'ABOUT',
+  MARKER = 'MARKER' 
 }
 
 export interface MonumentData {
@@ -26,7 +27,29 @@ export interface MonumentData {
   flipbookUrl: string;
 }
 
-export const MONUMENT_INFO: MonumentData = {
+// --- QUIZ TYPES ---
+export interface QuizOption {
+    id: string; // A, B, C, or D
+    text: string;
+    isCorrect: boolean;
+}
+
+export interface QuizQuestion {
+    id: number | string;
+    question: string;
+    points: number;
+    options: QuizOption[];
+}
+
+export interface StudentData {
+    name: string;
+    token: string;
+    className?: string;
+    gameId?: string; 
+}
+
+// Default fallback data jika API gagal
+export const DEFAULT_MONUMENT_INFO: MonumentData = {
   title: "Monumen Yudha Mandala",
   location: "Buleleng, Bali",
   description: "Monumen perjuangan rakyat Buleleng melawan penjajah.",

@@ -53,29 +53,30 @@ export const analyzeImage = async (base64Image: string): Promise<ARAnalysis> => 
       // Normalisasi skor (Rata-rata perbedaan per pixel)
       const averageEdgeScore = edgeScore / (size * size);
       
-      // 4. LOGIKA BARU: TARGET 65%
-      // Kita tentukan skor "Sempurna" (100%) adalah 18 (Gambar sangat detail/kontras tinggi)
-      const MAX_COMPLEXITY_SCORE = 18; 
+      // 4. LOGIKA BARU: TARGET 75%
+      // Kita tentukan skor "Sempurna" (100%) adalah 20
+      const MAX_COMPLEXITY_SCORE = 20; 
       
       // Hitung persentase berdasarkan skor visual saat ini
       let percentage = (averageEdgeScore / MAX_COMPLEXITY_SCORE) * 100;
       
+      // Boost sedikit agar lebih cepat jika ada objek jelas
+      percentage = percentage * 1.1; 
+
       // Cap di 100% dan Floor di 0%
       if (percentage > 100) percentage = 100;
       if (percentage < 0) percentage = 0;
 
       // Ambang Batas (Threshold) untuk memicu AR
-      // Sesuai permintaan: Hanya muncul jika kemiripan >= 65%
-      const REQUIRED_MATCH_PERCENTAGE = 65;
+      // TURUNKAN: 75% sesuai permintaan
+      const REQUIRED_MATCH_PERCENTAGE = 75;
       
       const isDetected = percentage >= REQUIRED_MATCH_PERCENTAGE;
 
-      setTimeout(() => {
-          resolve({ 
-              detected: isDetected,
-              matchPercentage: Math.floor(percentage)
-          });
-      }, 100);
+      resolve({ 
+          detected: isDetected,
+          matchPercentage: Math.floor(percentage)
+      });
     };
 
     img.onerror = () => {

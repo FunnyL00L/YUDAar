@@ -8,7 +8,7 @@ interface OverlayProps {
 
 export const Overlay: React.FC<OverlayProps> = ({ data, onReset }) => {
   return (
-    <div className="absolute inset-0 z-20 pointer-events-none flex flex-col justify-end pb-8 px-4 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+    <div className="absolute inset-0 z-20 pointer-events-none flex flex-col justify-end pb-24 px-4 sm:pb-8 bg-gradient-to-t from-black/80 via-transparent to-transparent">
       {/* Augmented Reality "HUD" Lines */}
       <div className="absolute top-0 left-0 w-full h-full p-6 opacity-30">
         <div className="w-full h-full border border-cyan-400 rounded-lg relative">
