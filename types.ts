@@ -54,5 +54,5 @@ export const DEFAULT_MONUMENT_INFO: MonumentData = {
   location: "Buleleng, Bali",
   description: "Monumen perjuangan rakyat Buleleng melawan penjajah.",
   history: "Monumen Yudha Mandala Utama di Buleleng didirikan untuk mengenang jasa para pahlawan yang gugur dalam mempertahankan kemerdekaan. Patung ini menggambarkan sosok pejuang gagah berani memegang bambu runcing/senjata, menyimbolkan semangat 'Puputan' rakyat Bali Utara.",
-  flipbookUrl: "https://example.com/sejarah-yudha-mandala.pdf" 
+  flipbookUrl: "https://drive.google.com/uc?id=1Pp-Pu8KqOimX6Tc2KNL_0jes55E7Kq0y&export=download" 
 };

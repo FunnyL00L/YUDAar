@@ -227,8 +227,8 @@ export const QuizOverlay: React.FC<QuizOverlayProps> = ({ onClose }) => {
     };
 
     return (
-        <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-6 pb-24 sm:pb-6 animate-fade-in">
-            <div className="bg-gray-900 w-full max-w-md rounded-2xl p-6 border border-orange-500/30 shadow-[0_0_50px_rgba(0,0,0,0.5)] max-h-[80vh] overflow-y-auto mb-10 sm:mb-0">
+        <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-6 pb-28 sm:pb-6 pb-[env(safe-area-inset-bottom)] animate-fade-in">
+            <div className="bg-gray-900 w-full max-w-md rounded-2xl p-6 border border-orange-500/30 shadow-[0_0_50px_rgba(0,0,0,0.5)] max-h-[80vh] overflow-y-auto mb-16 sm:mb-0">
                 {/* HEADER (Hide on result to focus on score) */}
                 {stage !== 'RESULT' && (
                     <div className="flex flex-col items-center mb-6">

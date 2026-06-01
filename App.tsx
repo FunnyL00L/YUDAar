@@ -221,8 +221,8 @@ const App: React.FC = () => {
   );
 
   const renderInfoOverlay = () => (
-    <div className="absolute inset-0 z-50 flex items-end sm:items-center justify-center bg-black/60 backdrop-blur-sm p-4 pb-20 sm:pb-4 animate-fade-in">
-      <div className="bg-gray-900/95 border border-white/10 w-full max-w-md rounded-2xl overflow-hidden shadow-2xl backdrop-blur-md mb-8 sm:mb-0">
+    <div className="absolute inset-0 z-50 flex items-end sm:items-center justify-center bg-black/60 backdrop-blur-sm p-4 pb-28 sm:pb-4 pb-[env(safe-area-inset-bottom)] animate-fade-in">
+      <div className="bg-gray-900/95 border border-white/10 w-full max-w-md rounded-2xl overflow-hidden shadow-2xl backdrop-blur-md mb-12 sm:mb-0">
         <div className="h-24 bg-orange-900/50 relative overflow-hidden flex items-end p-4 border-b border-orange-500/30">
             <h2 className="text-xl font-bold text-white relative z-10">{monumentInfo.title}</h2>
             <div className="absolute top-0 right-0 p-4 opacity-20">
@@ -335,7 +335,7 @@ const App: React.FC = () => {
 
             {/* Bottom Interaction Bar - PROPORTIONAL */}
             {isTargetFound && view === ViewMode.SCAN && (
-                <div className="absolute bottom-8 left-0 w-full px-6 z-40 flex gap-4 justify-center animate-fade-in">
+                <div className="absolute bottom-16 sm:bottom-12 pb-[env(safe-area-inset-bottom)] left-0 w-full px-6 z-40 flex gap-4 justify-center animate-fade-in">
                     <button onClick={() => setView(ViewMode.INFO)} className="flex-1 glass-panel py-4 rounded-2xl flex items-center justify-center gap-2 text-white hover:bg-white/20 active:scale-95 transition-all shadow-lg border-b-4 border-cyan-900/50">
                         <Info className="w-5 h-5 text-cyan-400" />
                         <span className="font-bold text-sm tracking-wide">INFORMASI</span>
