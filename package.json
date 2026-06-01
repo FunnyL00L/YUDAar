@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "preinstall": "rm -rf package-lock.json"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@react-three/drei": "^9.105.6",
